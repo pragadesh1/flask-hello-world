@@ -1,1 +1,7 @@
-
+jobs:
+  test:
+    # ... (run tests)
+  deploy:
+    needs: test
+    if: ${{ needs.test.result == 'success' }}
+    # ... (deployment steps)
